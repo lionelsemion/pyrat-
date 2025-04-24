@@ -1,7 +1,12 @@
-Hallo {name},
+Ahoi {name},
 
-Dein KI-generierter song ist fertig generiert und kann über den folgenden Link heruntergeladen werden.
+Gratuliere, Dein KI-generierter Song ist fertig und kann hier heruntergeladen werden:
 {url}
 
-Viel Spass damit und liebe Grüsse,
-Deine Piratenpartei
+Nach der BEA veranstalten wir einen grossen Wettbewerb und die fünf besten Tracks werden mit einer Pulle Rum und einem Jahr Ehrenmitgliedschaft in der Piratenpartei prämiert!
+
+Bis dahin, folge uns auf SocialMedia!
+www.piratenpartei.ch/SocialMedia
+
+Viele liebe Grüsse,
+Deine Piraten
