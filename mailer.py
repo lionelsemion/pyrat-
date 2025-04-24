@@ -1,6 +1,6 @@
 import smtplib, ssl
 from email.message import EmailMessage
-
+from email.utils import make_msgid
 import os
 from dotenv import load_dotenv
 
@@ -21,6 +21,7 @@ def send_mail(name, url, receiver_email):
     message["Subject"] = "Dein KI-Song ist fertig"
     message["From"] = sender_email
     message["To"] = receiver_email
+    message["Message-ID"] = make_msgid()
 
     port = 465  # For SSL
     password = os.getenv("EMAIL_PASSWORD")
