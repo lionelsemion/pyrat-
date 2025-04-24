@@ -3,6 +3,7 @@ from downloader import download_song
 from uploader import upload_files
 from mailer import send_mail
 from form_getter import get_form_responses
+from form_reloader import reload_form
 
 
 try:
@@ -36,6 +37,7 @@ def handle_request(donna_url: str, name: str, email: str):
 
 if __name__ == "__main__":
     while True:
+        reload_form()
         for donna_url, name, email in get_form_responses():
             print(f"Handling {name}'s request to send {donna_url} to {email}...")
 
