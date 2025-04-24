@@ -38,6 +38,7 @@ def handle_request(donna_url: str, name: str, email: str):
 if __name__ == "__main__":
     while True:
         reload_form()
+        sleep(10)
         for donna_url, name, email in get_form_responses():
             print(f"Handling {name}'s request to send {donna_url} to {email}...")
 
