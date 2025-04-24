@@ -1,0 +1,7 @@
+Hallo {name},
+
+Dein KI-generierter song ist fertig generiert und kann über den folgenden Link heruntergeladen werden.
+{url}
+
+Viel Spass damit und liebe Grüsse,
+Deine Piratenpartei
