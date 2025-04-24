@@ -10,4 +10,4 @@
 - Run `pip install -r requirements.txt`
 - Delete line 910 of "./env/lib/python3.13/site-packages/owncloud/owncloud.py" (`'name': data_el.find('name').text`)
 
-To start, run `python glue.py`.
+To start, run `python main.py`.
