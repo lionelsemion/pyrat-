@@ -1,2 +1,6 @@
 ./env
 .env
+__pycache__
+songs/*
+responses.csv
+sent_mails.txt
