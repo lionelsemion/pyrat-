@@ -5,8 +5,11 @@ from mailer import send_mail
 from form_getter import get_form_responses
 
 
-with open("./sent_mails.txt", "r") as f:
-    lines = set(f.readlines())
+try:
+    with open("./sent_mails.txt", "r") as f:
+        lines = set(f.readlines())
+except FileNotFoundError:
+    lines = set()
 
 
 def handle_request(donna_url: str, name: str, email: str):

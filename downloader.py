@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import os
 
 
 def download_song(donna_url: str, name: str, email: str):
@@ -37,6 +38,9 @@ def download_song(donna_url: str, name: str, email: str):
     response = requests.get(audio_url)
 
     if response.status_code == 200:
+        if not os.path.exists("./songs"):
+            os.makedirs("songs")
+
         with open("./songs/" + file_name, "wb") as f:
             f.write(response.content)
         print(f"Downloaded successfully as '{file_name}'")
