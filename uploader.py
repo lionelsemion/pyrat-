@@ -13,12 +13,16 @@ def upload_files(files):
     links = []
 
     for file in files:
-        path = f"Bern/2025 BEA/songs/{file}"
-
-        oc.put_file(path, f"./songs/{file}")
-
-        link_info = oc.share_file_with_link(path)
-
-        links.append(link_info.get_link())
+        links.append(upload_file(file))
 
     return links
+
+
+def upload_file(file):
+    path = f"Bern/2025 BEA/{file}"
+
+    oc.put_file(path, f"./{file}")
+
+    link_info = oc.share_file_with_link(path)
+
+    return link_info.get_link()
