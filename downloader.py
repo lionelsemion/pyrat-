@@ -48,7 +48,7 @@ def download_song(donna_url: str, name: str, email: str):
             f.write(
                 f'"{song_name}"\nBy {name} - {email}\n\nGenerated with musicdonna.com using the following prompt: \n\n{prompt}'
             )
-        return file_name, file_name[:-3] + "txt"
+        return ("songs/" + file_name, "songs/" + file_name[:-3] + "txt"), song_name
     else:
         print(f"Failed to download. Status code: {response.status_code}")
         return False
