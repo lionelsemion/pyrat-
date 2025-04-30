@@ -5,8 +5,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-oc = owncloud.Client("http://cloud.piratenpartei.ch/")
-oc.login(os.getenv("NEXTCLOUD_USERNAME"), os.getenv("NEXTCLOUD_PASSWORD"))
+while 1:
+    try:
+        oc = owncloud.Client("http://cloud.piratenpartei.ch/")
+        oc.login(os.getenv("NEXTCLOUD_USERNAME"), os.getenv("NEXTCLOUD_PASSWORD"))
+        break
+    except Exception as e:
+        print(e)
 
 
 def upload_files(files):

@@ -52,24 +52,28 @@ def handle_request(donna_url: str, name: str, email: str):
 
 if __name__ == "__main__":
     while True:
-        reload_form()
-        sleep(10)
+        try:
+            reload_form()
+            sleep(10)
 
-        updated = False
+            updated = False
 
-        for donna_url, name, email in get_form_responses():
-            print(f"Handling {name}'s request to send {donna_url} to {email}...")
+            for donna_url, name, email in get_form_responses():
+                print(f"Handling {name}'s request to send {donna_url} to {email}...")
 
-            if handle_request(donna_url, name, email):
-                updated = True
-                print(
-                    f"{name}'s request to send {donna_url} to {email} was successfull"
-                )
+                if handle_request(donna_url, name, email):
+                    updated = True
+                    print(
+                        f"{name}'s request to send {donna_url} to {email} was successfull"
+                    )
 
-        if updated:
-            print("Uploading contestants.csv...")
-            print(upload_file("contestants.csv"))
-            print("Upload successfull")
+            if updated:
+                print("Uploading contestants.csv...")
+                print(upload_file("contestants.csv"))
+                print("Upload successfull")
+
+        except Exception as e:
+            print(e)
 
         print("\nWaiting two minutes and then trying again...")
         sleep(120)
